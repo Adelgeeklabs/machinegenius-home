@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "target": "es2015",
+    "downlevelIteration": true
+  },
+  "include": [
+    "video.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/_components/CustomSelectInput/CustomSelectInput.tsx",
+    "app/video-editor/create/converted-script/ConvertedScriptPage.tsx",
+    "app/content-creator/create/show-errors/ShowErrorsPage.tsx",
+    "app/content-creator/create/show-errors/page.tsx",
+    "app/_components/ContentCreator/ShowErrorsPage.jsx",
+    "app/_components/OP/Analytics/01GodView/01RevenueOverview/Chart1.jsx"
+, "app/_utils/polyfills.js", "app/(authPaths)/hr/payroll/PayrollPDF.jsx"  ],
+  "exclude": ["node_modules"]
+}
