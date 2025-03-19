@@ -1,0 +1,93 @@
+/* ===== Start Table Container ===== */
+.tableContainer {
+  overflow: hidden;
+  border: 2px solid #dbdbd7;
+  -webkit-border-radius: clamp(16px, calc(1vw + 0.1rem), 1000px);
+  -moz-border-radius: clamp(16px, calc(1vw + 0.1rem), 1000px);
+  -ms-border-radius: clamp(16px, calc(1vw + 0.1rem), 1000px);
+  -o-border-radius: clamp(16px, calc(1vw + 0.1rem), 1000px);
+  border-radius: clamp(16px, calc(1vw + 0.1rem), 1000px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: #fffffb;
+}
+
+/* ===== Start Table ===== */
+.table {
+  height: 100%; /* 100% of h-[65vh] */
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  /* Set a fixed width for the table */
+  width: 100%;
+}
+
+
+.table .table_header li {
+  padding: var(--15px);
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+
+
+
+
+/* .table .table_header li svg {
+  width: 1vw;
+} */
+
+/* ===== Table Body ===== */
+.table .table_body {
+  height: 100%;
+}
+
+.table .table_body li {
+  padding: var(--10px);
+  font-weight: 400;
+}
+
+.table .table_body ul::after {
+  /* Border Bottom */
+  content: "";
+  width: calc(100% - 2vw);
+  height: 1px;
+  background-color: rgba(42, 43, 42, 0.29);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.table .table_body ul:last-child:after {
+  content: none;
+}
+
+.table .table_body ul:hover {
+  background-color: var(--dark);
+}
+
+.table .table_body ul:hover li {
+  color: var(--white);
+  /* text-wrap: wrap; */ /* not supposed to be in hover */
+}
+
+
+.table .table_body ul li a {
+  color: #0066ff;
+}
+
+.table .table_body ul:hover li a {
+  color: #5fa85b;
+}
+
+.table .table_body ul li:first-child {
+  font-weight: 500;
+}
+
+/* .table .table_body ul:hover li svg path {
+  fill: var(--white);
+} */

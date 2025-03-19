@@ -1,0 +1,26 @@
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding-top: 0.5vw;
+}
+.events h5,
+.events p {
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 100px);
+}
+.events h5 {
+  font-weight: 700;
+}
+.events p {
+  font-weight: 400;
+}
+.eventsBox {
+  border-radius: var(--10px);
+  padding: var(--11px) var(--16px);
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px #00000040;
+}
+.eventsBox:hover {
+  background-color: #2a2b2a;
+  color: #fff;
+}

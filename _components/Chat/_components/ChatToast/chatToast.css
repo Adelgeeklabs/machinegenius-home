@@ -1,0 +1,6 @@
+.chat__chat__aside__menu__profile_reversed {
+  border-radius: 3.82px 38.82px 3.82px 3.82px;
+  width: clamp(2rem, 2.466rem, 100%);
+  aspect-ratio: 0.8/1;
+  height: min-content;
+}

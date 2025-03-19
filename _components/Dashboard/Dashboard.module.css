@@ -1,0 +1,8 @@
+.dashboard h3 {
+  font-size: var(--21px);
+  font-weight: 700;
+}
+.dashboard > div:nth-child(1) > div > div::-webkit-scrollbar {
+  width: 0px !important;
+  display: none !important;
+}

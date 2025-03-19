@@ -1,0 +1,1015 @@
+/* ===== Start Imports ===== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Acumin Pro Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Acumin Pro Bold Italic"),
+    url("/fonts/Acumin-BdItPro.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Hellix";
+  src: url("/fonts/Hellix-Black.eot");
+  src:
+    local("Hellix Black"),
+    local("Hellix-Black"),
+    url("/fonts/Hellix-Black.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Hellix-Black.woff2") format("woff2"),
+    url("/fonts/Hellix-Black.woff") format("woff"),
+    url("/fonts/Hellix-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomLTSaeadaMedium";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("LT Saeada Medium"),
+    url("/fonts/LTSaeada-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "CustomLTSaeadaBold";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("LT Saeada Bold"),
+    url("/fonts/LTSaeada-Bold.woff") format("woff");
+}
+/* ===== End Imports ==== */
+
+/* ===== Start Variables ====== */
+:root {
+  /* ===== Colors ===== */
+  --dark: #2a2b2a;
+  --white: #fffffb;
+  --orange: #f36f24;
+  --lite-orange: #feede0;
+  /* ===== Values (W=1800px, H=930px) ===== */
+  --1px: clamp(1px, calc(0.013vw + 0.05rem), 1000px);
+  --2px: clamp(2px, calc(0.063vw + 0.05rem), 1000px);
+  --3px: clamp(3px, calc(0.115vw + 0.05rem), 1000px);
+  --4px: clamp(4px, calc(0.16vw + 0.05rem), 1000px);
+  --5px: clamp(5px, calc(0.22vw + 0.05rem), 1000px);
+  --6px: clamp(6px, calc(0.28vw + 0.05rem), 1000px);
+  --7px: clamp(7px, calc(0.31vw + 0.05rem), 1000px);
+  --8px: clamp(8px, calc(0.35vw + 0.1rem), 1000px);
+  --9px: clamp(9px, calc(0.4vw + 0.1rem), 1000px);
+  --10px: clamp(10px, calc(0.45vw + 0.1rem), 1000px);
+  --11px: clamp(10px, calc(0.515vw + 0.1rem), 1000px);
+  --12px: clamp(10px, calc(0.56vw + 0.1rem), 1000px);
+  --13px: clamp(10px, calc(0.61vw + 0.1rem), 1000px);
+  --14px: clamp(10px, calc(0.66vw + 0.1rem), 1000px);
+  --15px: clamp(10px, calc(0.7vw + 0.1rem), 1000px);
+  --16px: clamp(10px, calc(0.75vw + 0.1rem), 1000px);
+  --17px: clamp(10px, calc(0.8vw + 0.1rem), 1000px);
+  --18px: clamp(10px, calc(0.85vw + 0.1rem), 1000px);
+  --19px: clamp(10px, calc(0.9vw + 0.1rem), 1000px);
+  --20px: clamp(10px, calc(0.94vw + 0.1rem), 1000px);
+  --21px: clamp(10px, calc(0.99vw + 0.1rem), 1000px);
+  --22px: clamp(10px, calc(1.035vw + 0.1rem), 1000px);
+  --23px: clamp(10px, calc(1.085vw + 0.1rem), 1000px);
+  --24px: clamp(10px, calc(1.13vw + 0.1rem), 1000px);
+  --25px: clamp(10px, calc(1.18vw + 0.1rem), 1000px);
+  --26px: clamp(10px, calc(1.225vw + 0.1rem), 1000px);
+  --27px: clamp(10px, calc(1.27vw + 0.1rem), 1000px);
+  --28px: clamp(10px, calc(1.32vw + 0.1rem), 1000px);
+  --29px: clamp(10px, calc(1.37vw + 0.1rem), 1000px);
+  --30px: clamp(10px, calc(1.415vw + 0.1rem), 1000px);
+  --31px: clamp(10px, calc(1.46vw + 0.1rem), 1000px);
+  --32px: clamp(10px, calc(1.51vw + 0.1rem), 1000px);
+  --33px: clamp(10px, calc(1.555vw + 0.1rem), 1000px);
+  --34px: clamp(10px, calc(1.605vw + 0.1rem), 1000px);
+  --35px: clamp(10px, calc(1.65vw + 0.1rem), 1000px);
+  --36px: clamp(10px, calc(1.7vw + 0.1rem), 1000px);
+  --37px: clamp(10px, calc(1.75vw + 0.1rem), 1000px);
+  --38px: clamp(10px, calc(1.8vw + 0.1rem), 1000px);
+  --39px: clamp(10px, calc(1.85vw + 0.1rem), 1000px);
+  --40px: clamp(10px, calc(1.89vw + 0.1rem), 1000px);
+  --41px: clamp(10px, calc(1.94vw + 0.1rem), 1000px);
+  --42px: clamp(10px, calc(1.99vw + 0.1rem), 1000px);
+  --43px: clamp(10px, calc(2.04vw + 0.1rem), 1000px);
+  --44px: clamp(10px, calc(2.09vw + 0.1rem), 1000px);
+  --45px: clamp(10px, calc(2.13vw + 0.1rem), 1000px);
+  --46px: clamp(10px, calc(2.18vw + 0.1rem), 1000px);
+  --47px: clamp(10px, calc(2.23vw + 0.1rem), 1000px);
+  --48px: clamp(10px, calc(2.27vw + 0.1rem), 1000px);
+  --49px: clamp(10px, calc(2.325vw + 0.1rem), 1000px);
+  --50px: clamp(10px, calc(2.375vw + 0.1rem), 1000px);
+  --50px-1: clamp(55px, calc(2vw + 0.1rem), 200px);
+  --51px: clamp(10px, calc(2.425vw + 0.1rem), 1000px);
+  --55px: clamp(10px, calc(2.944vw + 0.1rem), 1000px);
+  --58px: clamp(10px, calc(3.111vw + 0.1rem), 1000px);
+  --60px: clamp(10px, calc(3.222vw + 0.1rem), 1000px);
+  --64px: clamp(10px, calc(3.444vw + 0.1rem), 1000px);
+  --65px: clamp(10px, calc(3.5vw + 0.1rem), 1000px);
+  --66px: clamp(10px, calc(3.556vw + 0.1rem), 1000px);
+  --68px: clamp(10px, calc(3.667vw + 0.1rem), 1000px);
+  --71px: clamp(10px, calc(3.25vw + 0.1rem), 1000px);
+  --72px: clamp(10px, calc(3.5vw + 0.1rem), 1000px);
+  --75px: clamp(10px, calc(4.056vw + 0.1rem), 1000px);
+  --77px: clamp(10px, calc(4.167vw + 0.1rem), 1000px);
+  --78px: clamp(10px, calc(4.222vw + 0.1rem), 1000px);
+  --80px: clamp(10px, calc(4.3vw + 0.1rem), 1000px);
+  --81px: clamp(10px, calc(4.5vw + 0.1rem), 1000px);
+  --83px: clamp(10px, calc(4.611vw + 0.1rem), 1000px);
+  --89px: clamp(10px, calc(4.944vw + 0.1rem), 1000px);
+  --90px: clamp(10px, calc(4.62vw + 0.1rem), 1000px);
+  --96px: clamp(10px, calc(5.222vw + 0.1rem), 1000px);
+  --98px: clamp(10px, calc(5.333vw + 0.1rem), 1000px);
+  --102px: clamp(10px, calc(5.556vw + 0.1rem), 1000px);
+  --111px: clamp(10px, calc(6.056vw + 0.1rem), 1000px);
+  --115px: clamp(10px, calc(6.389vw + 0.1rem), 1000px);
+  --116px: clamp(10px, calc(6.444vw + 0.1rem), 1000px);
+  --120px: clamp(10px, calc(6.18vw + 0.1rem), 1000px);
+  --128px: clamp(10px, calc(6.59vw + 0.1rem), 1000px);
+  --130px: clamp(10px, calc(7.222vw + 0.1rem), 1000px);
+  --146px: clamp(10px, calc(7.52vw + 0.1rem), 1000px);
+  --148px: clamp(10px, calc(8.222vw + 0.1rem), 1000px);
+  --150px: clamp(10px, calc(8.333vw + 0.1rem), 1000px);
+  --151px: clamp(10px, calc(8.389vw + 0.1rem), 1000px);
+  --154px: clamp(10px, calc(8.556vw + 0.1rem), 1000px);
+  --155px: clamp(10px, calc(8.611vw + 0.1rem), 1000px);
+  --158px: clamp(10px, calc(8.667vw + 0.1rem), 1000px);
+  --163px: clamp(10px, calc(9.056vw + 0.1rem), 1000px);
+  --165px: clamp(10px, calc(9.167vw + 0.1rem), 1000px);
+  --167px: clamp(10px, calc(9.278vw + 0.1rem), 1000px);
+  --175px: clamp(10px, calc(9.978vw + 0.1rem), 1000px);
+  --187px: clamp(10px, calc(10.444vw + 0.1rem), 1000px);
+  --194px: clamp(10px, calc(10.778vw + 0.1rem), 1000px);
+  --198px: clamp(10px, calc(11vw + 0.1rem), 1000px);
+  --200px: clamp(10px, calc(11.111vw + 0.1rem), 1000px);
+  --202px: clamp(10px, calc(11.222vw + 0.1rem), 1000px);
+  --220px: clamp(10px, calc(11.5vw + 0.1rem), 1000px);
+  --235px: clamp(10px, calc(12vw + 0.1rem), 1000px);
+  --252px: clamp(10px, calc(13.889vw + 0.1rem), 1000px);
+  --258px: clamp(10px, calc(13.35vw + 0.1rem), 1000px);
+  --264px: clamp(10px, calc(14.667vw + 0.1rem), 1000px);
+  --274px: clamp(10px, calc(15.111vw + 0.1rem), 1000px);
+  --291px: clamp(10px, calc(16.222vw + 0.1rem), 1000px);
+  --313px: clamp(10px, calc(17.389vw + 0.1rem), 1000px);
+  --319px: clamp(10px, calc(17.722vw + 0.1rem), 1000px);
+  --328px: clamp(10px, calc(18.222vw + 0.1rem), 1000px);
+  --339px: clamp(10px, calc(17.6vw + 0.1rem), 1000px);
+  --340px: clamp(10px, calc(18.889vw + 0.1rem), 1000px);
+  --351px: clamp(10px, calc(18.2vw + 0.1rem), 1000px);
+  --366px: clamp(10px, calc(19vw + 0.1rem), 1000px);
+  --370px: clamp(10px, calc(20.556vw + 0.1rem), 1000px);
+  --375px: clamp(10px, calc(20.833vw + 0.1rem), 1000px);
+  --389px: clamp(10px, calc(21.611vw + 0.1rem), 1000px);
+  --409px: clamp(10px, calc(22.722vw + 0.1rem), 1000px);
+  --411px: clamp(10px, calc(20vw + 0.1rem), 1000px);
+  --500px: clamp(10px, calc(27.778vw + 0.1rem), 1000px);
+  --502px: clamp(10px, calc(27.889vw + 0.1rem), 1000px);
+  --511px: clamp(10px, calc(28.389vw + 0.1rem), 1000px);
+  --542px: clamp(10px, calc(30.111vw + 0.1rem), 1000px);
+  --635px: clamp(10px, calc(33vw + 0.1rem), 1000px);
+  --667px: clamp(10px, calc(37.056vw + 0.1rem), 1000px);
+  --676px: clamp(10px, calc(37.556vw + 0.1rem), 1000px);
+  --689px: clamp(10px, calc(38.278vw + 0.1rem), 1000px);
+  --700px: clamp(10px, calc(38.889vw + 0.1rem), 1000px);
+  --721px: clamp(10px, calc(40.056vw + 0.1rem), 1000px);
+  --800px: clamp(10px, calc(44.444vw + 0.1rem), 1000px);
+  --900px: clamp(10px, calc(50vw + 0.1rem), 1000px);
+
+  /* Vertical Spacings (W=1800px, H=930px) */
+  --sy-1px: clamp(1px, calc(0.028vh + 0.05rem), 1000px);
+  --sy-2px: clamp(2px, calc(0.129vh + 0.05rem), 1000px);
+  --sy-3px: clamp(3px, calc(0.235vh + 0.05rem), 1000px);
+  --sy-4px: clamp(4px, calc(0.344vh + 0.05rem), 1000px);
+  --sy-5px: clamp(5px, calc(0.465vh + 0.05rem), 1000px);
+  --sy-6px: clamp(6px, calc(0.56vh + 0.05rem), 1000px);
+  --sy-7px: clamp(7px, calc(0.675vh + 0.05rem), 1000px);
+  --sy-8px: clamp(8px, calc(0.78vh + 0.05rem), 1000px);
+  --sy-9px: clamp(9px, calc(0.8vh + 0.1rem), 1000px);
+  --sy-10px: clamp(10px, calc(0.905vh + 0.1rem), 1000px);
+  --sy-11px: clamp(10px, calc(1.01vh + 0.1rem), 1000px);
+  --sy-12px: clamp(10px, calc(1.12vh + 0.1rem), 1000px);
+  --sy-13px: clamp(10px, calc(1.23vh + 0.1rem), 1000px);
+  --sy-14px: clamp(10px, calc(1.33vh + 0.1rem), 1000px);
+  --sy-15px: clamp(10px, calc(1.45vh + 0.1rem), 1000px);
+  --sy-16px: clamp(10px, calc(1.55vh + 0.1rem), 1000px);
+  --sy-17px: clamp(10px, calc(1.66vh + 0.1rem), 1000px);
+  --sy-18px: clamp(10px, calc(1.77vh + 0.1rem), 1000px);
+  --sy-19px: clamp(10px, calc(1.88vh + 0.1rem), 1000px);
+  --sy-20px: clamp(10px, calc(1.99vh + 0.1rem), 1000px);
+  --sy-21px: clamp(10px, calc(2.1vh + 0.1rem), 1000px);
+  --sy-22px: clamp(10px, calc(2.2vh + 0.1rem), 1000px);
+  --sy-23px: clamp(10px, calc(2.3vh + 0.1rem), 1000px);
+  --sy-24px: clamp(10px, calc(2.415vh + 0.1rem), 1000px);
+  --sy-25px: clamp(10px, calc(2.515vh + 0.1rem), 1000px);
+  --sy-26px: clamp(10px, calc(2.625vh + 0.1rem), 1000px);
+  --sy-27px: clamp(10px, calc(2.725vh + 0.1rem), 1000px);
+  --sy-28px: clamp(10px, calc(2.835vh + 0.1rem), 1000px);
+  --sy-29px: clamp(10px, calc(2.95vh + 0.1rem), 1000px);
+  --sy-30px: clamp(10px, calc(3.05vh + 0.1rem), 1000px);
+  --sy-31px: clamp(10px, calc(3.17vh + 0.1rem), 1000px);
+  --sy-32px: clamp(10px, calc(3.27vh + 0.1rem), 1000px);
+  --sy-33px: clamp(10px, calc(3.38vh + 0.1rem), 1000px);
+  --sy-35px: clamp(10px, calc(3.763vh + 0.1rem), 1000px);
+  --sy-38px: clamp(10px, calc(4.1vh + 0.1rem), 1000px);
+  --sy-40px: clamp(10px, calc(4.3vh + 0.1rem), 1000px);
+  --sy-44px: clamp(10px, calc(4.8vh + 0.1rem), 1000px);
+  --sy-48px: clamp(10px, calc(5.1vh + 0.1rem), 1000px);
+  --sy-50px: clamp(10px, calc(5.376vh + 0.1rem), 1000px);
+  --sy-60px: clamp(10px, calc(6.452vh + 0.1rem), 1000px);
+  --sy-64px: clamp(10px, calc(6.882vh + 0.1rem), 1000px);
+  --sy-80px: clamp(10px, calc(8.55vh + 0.1rem), 1000px);
+  --sy-90px: clamp(10px, calc(9.53vh + 0.1rem), 1000px);
+  --sy-95px: clamp(10px, calc(10.215vh + 0.1rem), 1000px);
+  --sy-100px: clamp(10px, calc(10.753vh + 0.1rem), 1000px);
+  --sy-118px: clamp(10px, calc(12.38vh + 0.1rem), 1000px);
+  --sy-136px: clamp(10px, calc(14.2vh + 0.1rem), 1000px);
+  --sy-160px: clamp(10px, calc(14.3vh + 0.1rem), 1000px);
+  --sy-165px: clamp(10px, calc(16.6vh + 0.1rem), 1000px);
+  --sy-170px: clamp(10px, calc(18.15vh + 0.1rem), 1000px);
+  --sy-196px: clamp(20px, calc(17.5vh + 0.1rem), 1000px);
+  --sy-227px: clamp(20px, calc(20.9vh + 0.1rem), 1000px);
+  --sy-243px: clamp(20px, calc(24.3vh + 0.1rem), 1000px);
+  --sy-251px: clamp(20px, calc(25vh + 0.1rem), 1000px);
+  --sy-271px: clamp(20px, calc(26vh + 0.1rem), 1500px);
+  --sy-320px: clamp(30px, calc(32vh + 0.1rem), 1000px);
+  --sy-380px: clamp(20px, calc(37.037vh + 0.1rem), 380px);
+  --sy-680px: clamp(20px, calc(69vh + 0.1rem), 1200px);
+  --sy-710px: clamp(30px, calc(78.89vh + 0.1rem), 2000px);
+}
+/* ===== End Variables ===== */
+
+/* ===== Start Global Styles ===== */
+/* * {
+  transition: all 0.3s;
+} */
+
+/* ===== Start Scrollbar ===== */
+/* Modern browsers - webkit */
+*::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Firefox */
+/* * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark) var(--white);
+} */
+
+/* Edge and IE */
+/* * {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+} */
+
+/* Standardized scrollbar styling (future-proof) */
+/* @supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark) var(--white);
+  }
+} */
+/* ===== End Scrollbar ===== */
+
+body {
+  background-color: #2a2b2a;
+  color: #000;
+  font-size: var(--16px);
+  font-family: "DM Sans", sans-serif;
+  line-height: normal;
+}
+
+input,
+textarea {
+  background-color: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  width: 100%;
+}
+/* ===== End Global Styles ===== */
+
+/* ===== Start Module Layout ===== */
+.module-layout {
+  display: flex;
+}
+.module-layout .Side_Nav_Wrapper {
+  width: clamp(300px, calc(18vw + 0.1rem), 400px); /* Reduced max width */
+  height: 100vh;
+  background: transparent;
+  flex-shrink: 0; /* Prevents shrinking in flex container */
+  transition: width 0.3s;
+  will-change: width;
+}
+/* Remove will-change when nav is not being interacted with */
+.module-layout .Side_Nav_Wrapper:not(:hover):not(:focus) {
+  will-change: auto;
+}
+.module-layout .Side_Nav_Wrapper.close {
+  width: clamp(70px, calc(6vw + 0.1rem), 200px); /* Reduced max width */
+}
+
+.module-layout .Page_Wrapper {
+  flex: 1; /* Allows the wrapper to grow and fill remaining space */
+  width: auto; /* Adjust width */
+  height: 100vh;
+  background: #fffffb;
+  border-radius: clamp(0.5rem, calc(4.3vw + 0.1rem), 100px) 0 0 0;
+  padding: var(--sy-10px) clamp(20px, calc(3.5vw + 0.1rem), 100px); /* Reduced max padding */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Prevents content overflow */
+}
+/* ===== End Module Layout ===== */
+
+/* 
+=====
+Start Edit btn in video-editor/create & social-media/campaigns/_sharing
+=====
+*/
+.videoStatusBtn.clicked {
+  color: rgba(42, 43, 42, 1);
+  background-color: rgba(255, 255, 251, 1);
+}
+/* 
+=====
+End Edit btn in video-editor/create & social-media/campaigns/_sharing
+=====
+*/
+
+/* ===== Start Edit pageHeader globally ===== */
+.pageHeader h3 {
+  font-size: clamp(16px, calc(1.6vw + 0.1rem), 80px);
+  font-weight: 700;
+}
+/* ===== End Edit pageHeader globally ===== */
+
+/* ===== Start Edit calendar globally ===== */
+.MuiButtonBase-root.MuiPickersDay-root {
+  color: #acacac;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 100px);
+  font-weight: 500;
+  width: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+}
+
+.MuiButtonBase-root.MuiPickersDay-root:hover {
+  background-color: #dfdfdf;
+}
+
+.MuiButtonBase-root.MuiPickersDay-root.Mui-selected {
+  background-color: var(--dark) !important;
+}
+
+.MuiDayCalendar-header span {
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 100px);
+  font-family: "DM Sans", sans-serif;
+  color: #2a2b2a;
+  font-weight: 500;
+  width: clamp(16px, calc(1.6vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1.6vw + 0.1rem), 80px);
+  font-weight: 700;
+}
+
+.MuiDateCalendar-root {
+  box-shadow: 2px 2px 4px 3px #dfdfdf !important;
+  border: 1px solid transparent;
+  border-radius: clamp(10px, calc(0.5vw + 0.1rem), 60px);
+  /* max-height: 28vh; */
+  overflow-y: hidden;
+  width: 100% !important;
+  padding: 0 2vw;
+}
+
+/* New Dashboard Design */
+/* .MuiPickersSlideTransition-root.MuiDayCalendar-slideTransition {
+  overflow-y: hidden;
+  max-height: 28vh;
+} */
+
+.MuiPickersCalendarHeader-label {
+  font-size: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button {
+  background-color: var(--dark);
+  cursor: pointer;
+  width: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  border-radius: 0.2vw;
+  color: var(--white);
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button svg {
+  width: clamp(16px, calc(1vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1vw + 0.1rem), 80px);
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button:hover {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button:disabled {
+  background-color: #d9d9d9;
+}
+
+.MuiPickersArrowSwitcher-spacer {
+  width: clamp(24px, calc(2vw + 0.1rem), 140px);
+}
+
+.pagination_iconButton__7wOJj {
+  width: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MuiButtonBase-root.MuiPickersDay-root:not(.Mui-selected) {
+  width: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+  height: clamp(16px, calc(1.5vw + 0.1rem), 80px);
+}
+
+.MuiBreadcrumbs-separator {
+  color: #f36f24;
+}
+
+.MuiYearCalendar-root .MuiPickersYear-yearButton.Mui-selected {
+  background-color: var(--dark) !important;
+}
+/* ===== End Edit calendar globally ===== */
+
+/* ===== Start Edit svg in tableBody articleRow ===== */
+.articleRow.changeSvgBg li span svg path {
+  fill: #fffffb;
+}
+.borderBottom:not(:last-child) {
+  border-bottom: 1px solid rgba(42, 43, 42, 0.29);
+}
+.articleRow.selected {
+  background-color: #2a2b2a;
+  color: var(--white);
+}
+/* ===== End Edit svg in tableBody articleRow ===== */
+
+/* ===== Start Slick-Slider in creative/boards & creative/handover ===== */
+.boards .slick-initialized .slick-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+/* ===== Start Slick-Slider in creative/boards & creative/handover ===== */
+
+/* ===== Start fillBtn in creative/boards & creative/handover ===== */
+.fillBtn::before {
+  content: "";
+  position: absolute; /* Positioning properties */
+  z-index: 0;
+  left: 50%;
+  top: 100%;
+
+  transform: translate(-50%, -80%);
+  width: 0; /* Dimension properties */
+  height: 0;
+  background-color: white; /* Other styles */
+  border-radius: 50%;
+  transition: all 0.2s;
+  transition:
+    height 0.2s,
+    width 0.4s;
+}
+
+.fillBtn:hover::before {
+  width: 200%;
+  height: 200%;
+}
+.fillBtn:hover {
+  color: #2a2b2a;
+}
+.fillBtn:hover svg path {
+  fill: #2a2b2a;
+}
+/* ===== End fillBtn in creative/boards & creative/handover ===== */
+
+/* ===== Start Edit calendar in creative/boards/projectDetails  ===== */
+.board-add-calendar-card {
+  box-shadow: 0.7px 2.09px 4.61px 0px #00000026;
+  border: 0.7px solid #dfdfdf;
+}
+
+.board-add-calendar-card .MuiDateCalendar-root {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.board-add-calendar-card .MuiPickersCalendarHeader-switchViewButton {
+  display: none;
+}
+
+.board-add-calendar-card .MuiDayCalendar-weekContainer {
+  display: flex;
+  gap: 0.6vw;
+  justify-content: space-between;
+}
+/* ===== End Edit calendar in creative/boards/projectDetails  ===== */
+
+/* ===== Start Edit chart in newsletter/analytics  ===== */
+.analyticsChart .apexcharts-legend {
+  left: 50% !important;
+  gap: 3vw;
+}
+.analyticsChart .apexcharts-legend-marker {
+  border-radius: 0 !important;
+  margin-right: 0.5vw;
+}
+/* ===== End Edit chart in newsletter/analytics  ===== */
+
+/* 
+===== Start Edit Slick-Slider in
+newsletter/email-list
+& op/analytics 
+& op/brands 
+& outreach/email-outreach/preview-sequence
+& outreach/templates/template-title
+===== 
+*/
+.sliderAudience .slick-slide > div {
+  margin: 0 10px; /* Adjust the value as needed */
+  box-sizing: border-box; /* Ensure padding/margin are included in the width calculations */
+}
+/* 
+===== End Edit Slick-Slider in
+newsletter/email-list
+& op/analytics 
+& op/brands 
+& outreach/email-outreach/preview-sequence
+& outreach/templates/template-title
+=====
+*/
+
+/* ===== Start op/brands ===== */
+.brands .slick-slide > div {
+  margin: 0 clamp(10px, calc(1.2vw + 0.1rem), 60px); /* Adjust the value as needed */
+  box-sizing: border-box; /* Ensure padding/margin are included in the width calculations */
+}
+/* ===== End op/brands ===== */
+
+/* ===== Start Slick-Slider Custom Arrows ===== */
+.custom_arrows.slick-arrow {
+  width: unset !important;
+  height: unset !important;
+  position: absolute !important;
+  top: unset !important;
+  bottom: calc(100% + 1.1vw) !important;
+  transform: translate(0, 0) !important;
+  -webkit-transform: translate(0, 0) !important;
+  -moz-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  -o-transform: translate(0, 0) !important;
+  z-index: 9999 !important;
+}
+
+.custom_arrows.slick-next {
+  right: 0vw;
+}
+.custom_arrows.slick-prev {
+  left: unset !important;
+  right: 2.5vw;
+}
+
+.custom_arrows.slick-arrow > svg {
+  width: clamp(10px, calc(1.5vw + 0.1rem), 50px);
+  height: clamp(10px, calc(1.5vw + 0.1rem), 50px);
+}
+
+.custom_arrows.slick-arrow.slick-next > svg > path,
+.custom_arrows.slick-arrow.slick-prev > svg > path {
+  fill: #000000;
+}
+.custom_arrows.slick-arrow.slick-next.slick-disabled > svg > path,
+.custom_arrows.slick-arrow.slick-prev.slick-disabled > svg > path {
+  fill: #d9d9d9;
+}
+/* ===== End Slick-Slider Custom Arrows ===== */
+
+/* ===== Start full-calender ===== */
+.eventsCalendar.full-calender
+  .fc
+  .fc-event.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid-block-event.fc-h-event {
+  width: 100% !important;
+}
+/* ===== End full-calender ===== */
+
+/* ===== Start hr/hiring/templates ===== */
+.templates-container .slick-slider.slick-initialized {
+  width: 100%;
+  position: relative;
+}
+
+.templates-container .slick-list {
+  /* display: flex; */
+  width: 100%;
+}
+
+.templates-container .slick-track {
+  display: flex;
+  /* width: 100%; */
+}
+
+.templates-container #unattached-template .slick-slide > div {
+  height: 100%;
+}
+/* ===== End hr/hiring/templates ===== */
+
+/* ===== Start HomePage & LandingPage ===== */
+.homePage * {
+  transition: all 0.3s;
+}
+
+.cont {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.cont .class {
+  width: 100%;
+  height: 100%;
+}
+.one {
+  background-color: red;
+}
+.two {
+  background-color: blue;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  inset: 0;
+}
+.three {
+  background-color: green;
+  left: 0;
+  transform: translateX(100%);
+  top: 0;
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+}
+.scroll-section-outer {
+  overflow: hidden;
+}
+
+.scroll-section-inner {
+  height: 60vh;
+  width: clamp(400vw, 400vw, 500vw);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-section {
+  width: clamp(100vw, 100vw, 200vw);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+/* ===== End HomePage & LandingPage ===== */
+
+/* ===== Start loader ===== */
+.custom-loader {
+  width: 24px;
+  height: 24px;
+  border: 5px solid #1c1c1c;
+  border-bottom-color: transparent !important;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ===== End loader ===== */
+
+/* ===== Start quill ===== */
+.ql-formats {
+  display: none;
+}
+/* ===== End quill ===== */
+
+/* ===== Start app\_components\HR\00Hiring\01JobOpenings\03InProcessHiring\ProspectsPreviewTable.tsx ===== */
+#toolbar {
+  background: transparent !important;
+}
+#viewer {
+  border-radius: var(--14px) !important;
+}
+/* ===== End app\_components\HR\00Hiring\01JobOpenings\03InProcessHiring\ProspectsPreviewTable.tsx ===== */
+
+/* ===== Start edit Dashboard Calendar ===== */
+.mg-dashboard .DashboardCalendar .MuiDateCalendar-root {
+  box-shadow: 0.79px 2.38px 5.24px 0px #00000026;
+  border: 1px solid #dfdfdf;
+  border-radius: var(--16px);
+  /* overflow-y: hidden; */
+  width: 100% !important;
+  padding: 0;
+  /* max-height: 31vh; */
+  /* background-color: blue !important; */
+}
+
+.mg-dashboard
+  .DashboardCalendar
+  .MuiPickersSlideTransition-root.MuiDayCalendar-slideTransition {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100% !important; */
+  /* height: 100% !important; */
+  /* background-color: red !important; */
+}
+
+.mg-dashboard
+  .DashboardCalendar
+  .MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button {
+  border: 1px solid var(--dark);
+  border-radius: 0.2vw;
+  background-color: var(--dark);
+  cursor: pointer;
+  padding: var(--5px);
+  width: var(--33px);
+  height: var(--33px);
+  color: var(--white);
+}
+
+.mg-dashboard
+  .DashboardCalendar
+  .MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button
+  > svg {
+  fill: var(--white);
+  width: var(--37px);
+  height: var(--37px);
+}
+
+.mg-dashboard .DashboardCalendar .MuiPickersArrowSwitcher-spacer {
+  width: var(--35px);
+}
+
+.mg-dashboard .DashboardCalendar .MuiPickersDay-today,
+.mg-dashboard
+  .DashboardCalendar
+  .MuiButtonBase-root.MuiPickersDay-root.Mui-selected {
+  background-color: var(--dark);
+  color: var(--white);
+  width: var(--33px) !important;
+  height: var(--33px) !important;
+  font-size: var(--13px);
+  margin: 0 2px;
+}
+
+.mg-dashboard .DashboardCalendar .MuiButtonBase-root.MuiPickersDay-root {
+  color: #bdbdbd;
+  font-weight: 500;
+  font-size: var(--13px);
+  font-family: "DM Sans", sans-serif;
+}
+
+.mg-dashboard
+  .DashboardCalendar
+  .MuiDateCalendar-root
+  .MuiButtonBase-root.MuiPickersDay-root {
+  margin: 0 var(--5px) !important;
+}
+
+.mg-dashboard
+  .DashboardCalendar
+  .MuiDateCalendar-root
+  .MuiPickersCalendarHeader-root {
+  padding: 0 var(--15px) !important;
+}
+
+.mg-dashboard .DashboardCalendar .MuiDayCalendar-header,
+.mg-dashboard .DashboardCalendar .MuiDayCalendar-weekContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 !important;
+  /* Add fixed width to maintain consistent spacing */
+  width: 100%;
+  padding: 0 var(--15px) !important;
+}
+/* ===== End edit Dashboard Calendar ===== */
+
+/* ===== Start Session Expired Toast ===== */
+.session-expired-toast-overlay {
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50001;
+}
+.session-expired-toast {
+  position: relative;
+  z-index: 50002;
+}
+.body-prevent-scroll {
+  overflow: hidden !important;
+}
+/* ===== End Session Expired Toast ===== */
+/* ===== Start Offline Message ===== */
+.offlineMsg {
+  position: fixed !important;
+  z-index: 999999999999;
+  bottom: 0;
+  left: clamp(70px, calc(6vw + 0.1rem), 200px);
+  border-radius: var(--5px);
+  background-color: #2a2b2a;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  font-weight: 600;
+  color: white;
+  padding: var(--12px);
+  pointer-events: none;
+  user-select: none;
+}
+/* ===== End Offline Message ===== */
+
+/* ===== Start the datepicker styles ===== */
+.custom-datepicker {
+  border-radius: 1rem !important;
+  font-family: inherit;
+  padding: 1.5rem !important;
+  background: white !important;
+  border: none !important;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+.react-datepicker__month-container {
+  font-family: inherit;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+  border-bottom: none !important;
+  padding-top: 0 !important;
+  font-family: inherit;
+}
+
+.react-datepicker__current-month {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #2a2b2a !important;
+  margin-bottom: 1rem !important;
+}
+
+.react-datepicker__day-name {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+  margin: 0.5rem !important;
+  width: 2rem !important;
+}
+
+.react-datepicker__day {
+  margin: 0.5rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  line-height: 2rem !important;
+  border-radius: 50% !important;
+  color: #2a2b2a !important;
+}
+
+.react-datepicker__day:hover:not(.react-datepicker__day--disabled):not(
+    .selected-day
+  ) {
+  background-color: #f3f4f6 !important;
+}
+
+.react-datepicker__day.selected-day {
+  background-color: #2a2b2a !important;
+  color: #fffffb !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #d1d5db !important;
+  text-decoration: none !important;
+  opacity: 0.5 !important;
+}
+
+.react-datepicker__navigation {
+  top: 1.5rem !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #2a2b2a !important;
+  border-width: 2px 2px 0 0 !important;
+  height: 8px !important;
+  width: 8px !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: 600 !important;
+  color: #2a2b2a !important;
+  border: 2px solid #2a2b2a !important;
+}
+
+/* Navigation buttons */
+.react-datepicker__navigation-icon {
+  top: -4px !important;
+}
+
+.react-datepicker__navigation--previous {
+  left: 1.5rem !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 1.5rem !important;
+}
+
+/* ===== End the datepicker styles ===== */
+
+/* ===== Start animation keyframes ===== */
+@keyframes expandDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    transform: translateX(-50%) scaleX(0);
+  }
+  to {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* animation utility classes */
+.animate-expandDown {
+  animation: expandDown 0.5s ease-out forwards;
+}
+
+.animate-expandWidth {
+  animation: expandWidth 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ===== End animation keyframes ===== */

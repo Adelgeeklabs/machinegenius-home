@@ -1,0 +1,46 @@
+.box {
+  box-shadow: 2px 2px 4px 2px #dfdfdf;
+  border: 1px solid transparent;
+  border-radius: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  overflow: hidden;
+}
+.profileAndStatus {
+  padding-right: var(--10px);
+  border-right: 1px solid #dbdbd7;
+}
+.profileAndStatus svg {
+  width: clamp(24px, calc(2.6vw + 0.1rem), 140px);
+  height: clamp(24px, calc(2.5vw + 0.1rem), 140px);
+}
+.profileAndStatus h5 {
+  color: var(--white);
+  font-size: clamp(10px, calc(0.8vw + 0.1rem), 60px);
+  font-weight: 700;
+}
+.profileAndStatus p {
+  color: #828282;
+  font-weight: 400;
+  font-size: clamp(10px, calc(0.7vw + 0.1rem), 100px);
+}
+.movedStatus svg {
+  width: clamp(10px, calc(0.5vw + 0.1rem), 60px);
+  height: clamp(10px, calc(0.5vw + 0.1rem), 60px);
+}
+.movedStatus {
+  position: absolute;
+  top: 25%;
+  right: 70%;
+  transform: translate(-50%);
+}
+.annoucementBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: clamp(10px, calc(1vw + 0.1rem), 60px);
+}
+.annoucementBody p {
+  text-align: justify;
+  font-size: clamp(10px, calc(0.9vw + 0.1rem), 60px);
+  font-weight: 400;
+  color: var(--white);
+}

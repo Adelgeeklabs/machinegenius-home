@@ -1,0 +1,48 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-top: 1px solid #c9c9c9;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.paginationButton:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pageNumber {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.pageNumber.active {
+  background: #000;
+  color: white;
+}
+
+.ellipsis {
+  padding: 0 0.5rem;
+}
