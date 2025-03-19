@@ -10,7 +10,6 @@ import React, {
 import { io, Socket } from "socket.io-client";
 import { globalContext } from "@/app/_context/store";
 import toast from "react-hot-toast";
-import chatToast from "@/app/_components/Chat/_components/ChatToast/chatToast";
 // import { publicPaths } from "@/app/_context/store";
 import { usePathname } from "next/navigation";
 import useSessionStorage from "../_hooks/useSessionStorage";
