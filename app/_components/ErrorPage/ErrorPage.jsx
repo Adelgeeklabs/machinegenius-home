@@ -1,6 +1,5 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
-import { globalContext } from "@/app/_context/store";
 import {
   AlertCircle,
   RefreshCw,

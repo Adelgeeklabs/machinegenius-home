@@ -1,3 +1,0 @@
-.checkbox__label:has(input:checked) {
-  background-color: var(--dark);
-}
